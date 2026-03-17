@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços - PetFeliz Petshop</title>
+</head>
+<body>
+
+  <header>
+    <h1>PetFeliz Petshop</h1>
+    <p>Cuidando do seu melhor amigo com amor e dedicação!</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+      </ul>
+    </nav>
+    <hr>
+  </header>
+
+  <main>
+    <h2>Nossos Serviços</h2>
+    <p>
+      Na PetFeliz, oferecemos uma variedade de serviços para cuidar bem do seu animal de estimação.
+      Confira abaixo os serviços disponíveis, valores e se há opção de tele-busca (busca e entrega do pet em domicílio).
+    </p>
+
+    <p><strong>Tele-busca:</strong> Para alguns serviços oferecemos a comodidade de buscar e entregar seu pet em casa.
+    Consulte disponibilidade para sua região pelo telefone (31) 3333-4444.</p>
+
+    <hr>
+
+    <section>
+      <h3>Banho Completo</h3>
+      <p>
+        <strong>Descrição:</strong> Serviço completo de banho que inclui lavagem com shampoo e condicionador
+        adequados ao tipo de pelagem, secagem com soprador profissional, limpeza de ouvidos, corte de
+        unhas e aplicação de colônia. O animal fica limpo, cheiroso e confortável.
+      </p>
+      <p><strong>Valor:</strong> R$ 60,00</p>
+      <p><strong>Tele-busca:</strong> <strong>Disponível</strong> - Buscamos e entregamos seu pet em domicílio.</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h3>Tosa Higiênica</h3>
+      <p>
+        <strong>Descrição:</strong> Tosa higiênica focada nos pelos das regiões íntimas, patinhas e
+        ao redor dos olhos para garantir maior higiene e conforto ao animal. Não inclui tosa completa
+        do corpo. Indicada para manutenção entre tosas completas.
+      </p>
+      <p><strong>Valor:</strong> R$ 45,00</p>
+      <p><strong>Tele-busca:</strong> <strong>Disponível</strong> - Buscamos e entregamos seu pet em domicílio.</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h3>Tosa Completa</h3>
+      <p>
+        <strong>Descrição:</strong> Tosa do corpo inteiro do animal, com acabamento conforme o padrão da raça
+        ou conforme preferência do tutor. Inclui também tosa higiênica, limpeza de ouvidos e corte de unhas.
+        Realizada por profissionais experientes e especializados.
+      </p>
+      <p><strong>Valor:</strong> R$ 85,00</p>
+      <p><strong>Tele-busca:</strong> <strong>Disponível</strong> - Buscamos e entregamos seu pet em domicílio.</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h3>Consulta Veterinária</h3>
+      <p>
+        <strong>Descrição:</strong> Consulta clínica geral com médico veterinário para avaliação da saúde do
+        seu pet. Inclui anamnese, exame físico completo, orientações gerais e, quando necessário,
+        encaminhamento para exames complementares. Agendamento prévio obrigatório.
+      </p>
+      <p><strong>Valor:</strong> R$ 120,00</p>
+      <p><strong>Tele-busca:</strong> <strong>Não disponível</strong> - Atendimento presencial obrigatório.</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h3>Vacinação</h3>
+      <p>
+        <strong>Descrição:</strong> Aplicação de vacinas para cães e gatos conforme o calendário vacinal
+        recomendado pelo médico veterinário. Trabalhamos com as principais vacinas do mercado:
+        V8, V10, antirrábica, gripe canina, entre outras. Emissão de carteirinha de vacinação.
+      </p>
+      <p><strong>Valor:</strong> A partir de R$ 80,00 (varia conforme o tipo de vacina)</p>
+      <p><strong>Tele-busca:</strong> <strong>Não disponível</strong> - Atendimento presencial obrigatório.</p>
+    </section>
+
+    <hr>
+
+    <h3>Agendamento e Informações</h3>
+    <p>Para agendar qualquer um dos serviços, entre em contato conosco:</p>
+    <ul>
+      <li>Telefone: (31) 3333-4444</li>
+      <li>WhatsApp: (31) 99999-8888</li>
+      <li>E-mail: contato@petfeliz.com.br</li>
+      <li>Presencialmente: Rua dos Animais, 123 - Centro</li>
+    </ul>
+    <p>Horário de funcionamento: Segunda a Sábado, das 8h às 18h.</p>
+
+  </main>
+
+  <hr>
+  <footer>
+    <p><strong>PetFeliz Petshop</strong> &copy; 2025 - Todos os direitos reservados.</p>
+    <p>Desenvolvido por: João da Silva | Disciplina: Fundamentos de Sistemas Web</p>
+    <p>Contato: contato@petfeliz.com.br | Telefone: (31) 3333-4444</p>
+    <nav>
+      <a href="index.html">Início</a> |
+      <a href="produtos.html">Produtos</a> |
+      <a href="servicos.html">Serviços</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
