@@ -1,3 +1,313 @@
-{
-    "liveServer.settings.multiRootWorkspaceName": "files"
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PetFeliz Petshop – Produtos, serviços e agendamento para o seu pet." />
+  <title>PetFeliz Petshop – Início</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <!-- Bootstrap icones -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  />
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="css/estilo.css" />
+</head>
+<body>
+
+  <!-- ACESSIBILIDADE: link de pular para o conteúdo principal -->
+  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-petfeliz sticky-top shadow" aria-label="Navegação principal">
+    <div class="container">
+      <a class="navbar-brand fs-4" href="index.html">
+        <i class="bi bi-paw-fill me-2" aria-hidden="true"></i>PetFeliz
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarPrincipal"
+        aria-controls="navbarPrincipal"
+        aria-expanded="false"
+        aria-label="Abrir menu de navegação"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarPrincipal">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/petFeliz-puc-main/index.html">
+              <i class="bi bi-house-fill me-1" aria-hidden="true"></i>Início
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/petFeliz-puc-main/produtos.html">
+              <i class="bi bi-bag-fill me-1" aria-hidden="true"></i>Produtos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/petFeliz-puc-main/servicos.html">
+              <i class="bi bi-scissors me-1" aria-hidden="true"></i>Serviços
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/petFeliz-puc-main/cadastro.html">
+              <i class="bi bi-person-fill-add me-1" aria-hidden="true"></i>Cadastro
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/petFeliz-puc-main/agendamento.html">
+              <i class="bi bi-calendar-check-fill me-1" aria-hidden="true"></i>Agendamento
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BANNER DE FUNCIONAMENTO -->
+  <div id="banner-funcionamento" class="alert mb-0 text-center fw-bold" role="status" aria-live="polite">
+    Verificando horário de funcionamento…
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero-section" id="conteudo-principal">
+    <div class="container">
+      <h1>
+        <i class="bi bi-paw-fill me-2" aria-hidden="true"></i>PetFeliz Petshop
+      </h1>
+      <p class="lead mb-4">Cuidando do seu melhor amigo com amor e dedicação!</p>
+      <a href="/petFeliz-puc-main/cadastro.html" class="btn btn-destaque btn-lg me-2">
+        <i class="bi bi-person-fill-add me-1" aria-hidden="true"></i>Cadastre-se
+      </a>
+      <a href="/petFeliz-puc-main/agendamento.html" class="btn btn-petfeliz btn-lg">
+        <i class="bi bi-calendar-check me-1" aria-hidden="true"></i>Agendar Serviço
+      </a>
+    </div>
+  </header>
+
+  <!-- ===================== RELÓGIO ===================== -->
+  <section class="py-3 bg-white" aria-label="Horário atual">
+    <div class="container">
+      <div class="card card-horario text-center py-3 shadow-sm">
+        <p id="data-atual" class="mb-1 text-muted small" aria-live="off"></p>
+        <p
+          id="relogio-digital"
+          aria-label="Relógio digital"
+          aria-live="off"
+          title="Horário atual"
+        >00:00:00</p>
+        <p class="mb-0 small text-muted">Funcionamos de seg. a sáb., das 8h às 18h</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CARROSSEL ===================== -->
+  <section class="py-4" aria-label="Destaques do petshop">
+    <div class="container">
+      <h2 class="titulo-secao mb-4">Destaques</h2>
+
+      <div
+        id="carrosselPetFeliz"
+        class="carousel slide carousel-petfeliz rounded shadow"
+        data-bs-ride="carousel"
+        data-bs-interval="4000"
+        aria-label="Carrossel de destaques"
+      >
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carrosselPetFeliz" data-bs-slide-to="0"
+            class="active" aria-current="true" aria-label="Slide 1: Ração Premium"></button>
+          <button type="button" data-bs-target="#carrosselPetFeliz" data-bs-slide-to="1"
+            aria-label="Slide 2: Banho e Tosa"></button>
+          <button type="button" data-bs-target="#carrosselPetFeliz" data-bs-slide-to="2"
+            aria-label="Slide 3: Tele-busca"></button>
+          <button type="button" data-bs-target="#carrosselPetFeliz" data-bs-slide-to="3"
+            aria-label="Slide 4: Produtos de Higiene"></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://placehold.co/1200x380/2e7d32/ffffff?text=🐕+Ração+Premium"
+              class="d-block w-100"
+              alt="Foto ilustrativa de ração premium para cães adultos"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Ração Premium</h5>
+              <p>Nutrição completa para cães e gatos de todas as idades.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://placehold.co/1200x380/1565c0/ffffff?text=✂️+Banho+e+Tosa"
+              class="d-block w-100"
+              alt="Serviço de banho e tosa profissional para pets"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Banho &amp; Tosa</h5>
+              <p>Seu pet sempre limpo, cheiroso e bem cuidado.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://placehold.co/1200x380/e65100/ffffff?text=🚗+Tele-busca"
+              class="d-block w-100"
+              alt="Serviço de tele-busca: buscamos e entregamos seu pet em casa"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Tele-busca Disponível</h5>
+              <p>Buscamos e entregamos seu pet com segurança e conforto.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://placehold.co/1200x380/6a1b9a/ffffff?text=🧴+Higiene+e+Cuidados"
+              class="d-block w-100"
+              alt="Produtos de higiene e cuidados para pets"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Higiene &amp; Cuidados</h5>
+              <p>Shampoos, escovas e produtos para manter seu pet saudável.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button"
+          data-bs-target="#carrosselPetFeliz" data-bs-slide="prev"
+          aria-label="Slide anterior">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button"
+          data-bs-target="#carrosselPetFeliz" data-bs-slide="next"
+          aria-label="Próximo slide">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DIFERENCIAIS ===================== -->
+  <section class="py-5 bg-white" aria-label="Nossos diferenciais">
+    <div class="container">
+      <h2 class="titulo-secao mb-5 text-center w-100">Por que escolher a PetFeliz?</h2>
+      <div class="row g-4 text-center">
+        <div class="col-sm-6 col-lg-3">
+          <div class="p-4 rounded-4 h-100 shadow-sm bg-light">
+            <i class="bi bi-award-fill fs-1 text-success mb-3" aria-hidden="true"></i>
+            <h3 class="h5 fw-bold">Qualidade</h3>
+            <p class="text-muted small">Produtos selecionados das melhores marcas do mercado.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="p-4 rounded-4 h-100 shadow-sm bg-light">
+            <i class="bi bi-heart-fill fs-1 text-danger mb-3" aria-hidden="true"></i>
+            <h3 class="h5 fw-bold">Cuidado</h3>
+            <p class="text-muted small">Equipe apaixonada e treinada para cuidar do seu pet.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="p-4 rounded-4 h-100 shadow-sm bg-light">
+            <i class="bi bi-truck fs-1 text-warning mb-3" aria-hidden="true"></i>
+            <h3 class="h5 fw-bold">Tele-busca</h3>
+            <p class="text-muted small">Buscamos e entregamos seu pet com segurança e pontualidade.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="p-4 rounded-4 h-100 shadow-sm bg-light">
+            <i class="bi bi-calendar-check-fill fs-1 text-primary mb-3" aria-hidden="true"></i>
+            <h3 class="h5 fw-bold">Agendamento</h3>
+            <p class="text-muted small">Marque o horário online de forma rápida e prática.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="py-5" style="background:linear-gradient(135deg,#1b5e20,#43a047);" aria-label="Chamada para ação">
+    <div class="container text-center text-white">
+      <h2 class="fw-bold mb-3">Agende agora o serviço do seu pet!</h2>
+      <p class="mb-4 opacity-75">Banho, tosa e muito mais. Com tele-busca disponível.</p>
+      <a href="agendamento.html" class="btn btn-destaque btn-lg me-2">
+        <i class="bi bi-calendar-plus me-1" aria-hidden="true"></i>Agendar
+      </a>
+      <a href="cadastro.html" class="btn btn-outline-light btn-lg">
+        <i class="bi bi-person-fill-add me-1" aria-hidden="true"></i>Cadastrar
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="rodape" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6><i class="bi bi-paw-fill me-1" aria-hidden="true"></i>PetFeliz Petshop</h6>
+          <p class="small opacity-75">Cuidando do seu melhor amigo com amor e dedicação desde 2020.</p>
+          <p class="small opacity-75">
+            <i class="bi bi-geo-alt-fill me-1" aria-hidden="true"></i>
+            Rua dos Animais, 123 – Centro
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h6>Navegação</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/petFeliz-puc-main/index.html"><i class="bi bi-chevron-right me-1" aria-hidden="true"></i>Início</a></li>
+            <li><a href="/petFeliz-puc-main/produtos.html"><i class="bi bi-chevron-right me-1" aria-hidden="true"></i>Produtos</a></li>
+            <li><a href="/petFeliz-puc-main/servicos.html"><i class="bi bi-chevron-right me-1" aria-hidden="true"></i>Serviços</a></li>
+            <li><a href="/petFeliz-puc-main/cadastro.html"><i class="bi bi-chevron-right me-1" aria-hidden="true"></i>Cadastro</a></li>
+            <li><a href="/petFeliz-puc-main/agendamento.html"><i class="bi bi-chevron-right me-1" aria-hidden="true"></i>Agendamento</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Contato</h6>
+          <ul class="list-unstyled small">
+            <li>
+              <i class="bi bi-telephone-fill me-1" aria-hidden="true"></i>
+              <a href="tel:+55313333444">(31) 3333-4444</a>
+            </li>
+            <li>
+              <i class="bi bi-whatsapp me-1" aria-hidden="true"></i>
+              <a href="https://wa.me/5531999998888" target="_blank" rel="noopener noreferrer">
+                (31) 99999-8888
+              </a>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill me-1" aria-hidden="true"></i>
+              <a href="mailto:contato@petfeliz.com.br">contato@petfeliz.com.br</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rodape-copy text-center">
+        <p class="mb-0">
+          &copy; 2025 <strong>PetFeliz Petshop</strong>. Todos os direitos reservados.
+          Desenvolvido por João da Silva – Disciplina: Fundamentos de Sistemas Web.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle (inclui Popper) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmYfn3Z2LcxYGPt6zo0xCqDQkHi"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Scripts personalizados -->
+  <script src="js/scripts.js"></script>
+</body>
+</html>

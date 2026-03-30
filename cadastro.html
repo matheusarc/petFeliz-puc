@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PetFeliz – Formulário de cadastro de cliente e pet." />
+  <title>Cadastro – PetFeliz Petshop</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/estilo.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-petfeliz sticky-top shadow" aria-label="Navegação principal">
+    <div class="container">
+      <a class="navbar-brand fs-4" href="index.html">
+        <i class="bi bi-paw-fill me-2" aria-hidden="true"></i>PetFeliz
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal"
+        aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarPrincipal">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill me-1" aria-hidden="true"></i>Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="produtos.html"><i class="bi bi-bag-fill me-1" aria-hidden="true"></i>Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicos.html"><i class="bi bi-scissors me-1" aria-hidden="true"></i>Serviços</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="cadastro.html"><i class="bi bi-person-fill-add me-1" aria-hidden="true"></i>Cadastro</a></li>
+          <li class="nav-item"><a class="nav-link" href="agendamento.html"><i class="bi bi-calendar-check-fill me-1" aria-hidden="true"></i>Agendamento</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-section py-5">
+    <div class="container">
+      <h1 class="fw-bold"><i class="bi bi-person-fill-add me-2" aria-hidden="true"></i>Cadastro de Cliente e Pet</h1>
+      <p class="lead">Preencha os dados abaixo para se cadastrar no PetFeliz.</p>
+    </div>
+  </header>
+
+  <!-- FORMULÁRIO -->
+  <main id="conteudo-principal" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+          <!-- ALERTA DE SUCESSO (oculto por padrão, exibido pelo JS) -->
+          <div
+            id="alerta-cadastro"
+            class="alert alert-success alerta-sucesso mb-4"
+            role="alert"
+            aria-live="assertive"
+          >
+            <i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>
+            <strong>Cadastro realizado com sucesso!</strong> Entraremos em contato em breve.
+          </div>
+
+          <div class="form-section">
+            <h2><i class="bi bi-person-lines-fill me-2" aria-hidden="true"></i>Formulário de Cadastro</h2>
+            <p class="text-muted small mb-4">
+              Campos marcados com <span class="text-danger fw-bold">*</span> são obrigatórios.
+            </p>
+
+            <form
+              id="form-cadastro"
+              novalidate
+              onsubmit="processarCadastro(event)"
+              aria-label="Formulário de cadastro de cliente e pet"
+            >
+
+              <!-- ===== DADOS DO CLIENTE ===== -->
+              <fieldset class="secao-formulario">
+                <legend><h4><i class="bi bi-person-fill me-1" aria-hidden="true"></i>Dados do Cliente</h4></legend>
+
+                <div class="row g-3">
+
+                  <!-- Nome completo -->
+                  <div class="col-md-6">
+                    <label for="nome" class="form-label obrigatorio">Nome completo</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nome"
+                      name="nome"
+                      placeholder="Ex.: Maria da Silva"
+                      required
+                      minlength="3"
+                      maxlength="100"
+                      autocomplete="name"
+                      aria-required="true"
+                    />
+                    <div class="invalid-feedback">Por favor, informe o nome completo (mín. 3 caracteres).</div>
+                  </div>
+
+                  <!-- CPF -->
+                  <div class="col-md-6">
+                    <label for="cpf" class="form-label obrigatorio">CPF</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cpf"
+                      name="cpf"
+                      placeholder="000.000.000-00"
+                      required
+                      maxlength="14"
+                      inputmode="numeric"
+                      oninput="mascaraCPF(this)"
+                      aria-required="true"
+                      aria-describedby="cpf-ajuda"
+                    />
+                    <span class="form-text" id="cpf-ajuda">Digite apenas os 11 dígitos.</span>
+                    <div class="invalid-feedback">CPF inválido. Verifique e tente novamente.</div>
+                  </div>
+
+                  <!-- Data de nascimento -->
+                  <div class="col-md-4">
+                    <label for="nascimento" class="form-label obrigatorio">Data de nascimento</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="nascimento"
+                      name="nascimento"
+                      required
+                      max="2010-01-01"
+                      aria-required="true"
+                    />
+                    <div class="invalid-feedback">Informe uma data de nascimento válida.</div>
+                  </div>
+
+                  <!-- Sexo -->
+                  <div class="col-md-4">
+                    <label class="form-label obrigatorio" id="label-sexo">Sexo</label>
+                    <div class="d-flex gap-3 mt-1" role="group" aria-labelledby="label-sexo">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sexo" id="sexo-m" value="M" required />
+                        <label class="form-check-label" for="sexo-m">Masculino</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sexo" id="sexo-f" value="F" />
+                        <label class="form-check-label" for="sexo-f">Feminino</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sexo" id="sexo-o" value="O" />
+                        <label class="form-check-label" for="sexo-o">Outro</label>
+                      </div>
+                    </div>
+                    <div class="invalid-feedback d-block" id="sexo-erro" style="display:none!important;"></div>
+                  </div>
+
+                  <!-- Telefone -->
+                  <div class="col-md-4">
+                    <label for="telefone" class="form-label obrigatorio">Telefone / WhatsApp</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="telefone"
+                      name="telefone"
+                      placeholder="(31) 99999-0000"
+                      required
+                      maxlength="15"
+                      inputmode="numeric"
+                      oninput="mascaraTelefone(this)"
+                      autocomplete="tel"
+                      aria-required="true"
+                    />
+                    <div class="invalid-feedback">Informe um telefone válido.</div>
+                  </div>
+
+                  <!-- E-mail -->
+                  <div class="col-md-6">
+                    <label for="email" class="form-label obrigatorio">E-mail</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      placeholder="exemplo@email.com"
+                      required
+                      maxlength="100"
+                      autocomplete="email"
+                      aria-required="true"
+                    />
+                    <div class="invalid-feedback">Informe um e-mail válido.</div>
+                  </div>
+
+                  <!-- Como nos conheceu -->
+                  <div class="col-md-6">
+                    <label for="origem" class="form-label">Como nos conheceu?</label>
+                    <select class="form-select" id="origem" name="origem">
+                      <option value="" selected disabled>Selecione uma opção…</option>
+                      <option value="indicacao">Indicação de amigo</option>
+                      <option value="google">Pesquisa no Google</option>
+                      <option value="instagram">Instagram / Redes Sociais</option>
+                      <option value="panfleto">Panfleto / Material impresso</option>
+                      <option value="passagem">Passei em frente à loja</option>
+                      <option value="outro">Outro</option>
+                    </select>
+                  </div>
+
+                </div><!-- /row dados cliente -->
+              </fieldset>
+
+              <!-- ===== ENDEREÇO ===== -->
+              <fieldset class="secao-formulario">
+                <legend><h4><i class="bi bi-geo-alt-fill me-1" aria-hidden="true"></i>Endereço</h4></legend>
+
+                <div class="row g-3">
+
+                  <div class="col-md-4">
+                    <label for="cep" class="form-label obrigatorio">CEP</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="cep"
+                        name="cep"
+                        placeholder="00000-000"
+                        required
+                        maxlength="9"
+                        inputmode="numeric"
+                        oninput="mascaraCEP(this)"
+                        aria-required="true"
+                        aria-describedby="cep-ajuda"
+                      />
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        onclick="buscarCEP()"
+                        aria-label="Buscar endereço pelo CEP"
+                      >
+                        <i class="bi bi-search" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <span class="form-text" id="cep-ajuda"></span>
+                    <div class="invalid-feedback">Informe o CEP.</div>
+                  </div>
+
+                  <div class="col-md-8">
+                    <label for="logradouro" class="form-label obrigatorio">Logradouro (Rua / Av.)</label>
+                    <input type="text" class="form-control" id="logradouro" name="logradouro"
+                      placeholder="Nome da rua ou avenida" required maxlength="150" aria-required="true" />
+                    <div class="invalid-feedback">Informe o logradouro.</div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label for="numero" class="form-label obrigatorio">Número</label>
+                    <input type="text" class="form-control" id="numero" name="numero"
+                      placeholder="Ex.: 123" required maxlength="10" aria-required="true" />
+                    <div class="invalid-feedback">Informe o número.</div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="complemento" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="complemento" name="complemento"
+                      placeholder="Apto, Bloco, etc." maxlength="50" />
+                  </div>
+
+                  <div class="col-md-5">
+                    <label for="bairro" class="form-label obrigatorio">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" name="bairro"
+                      required maxlength="80" aria-required="true" />
+                    <div class="invalid-feedback">Informe o bairro.</div>
+                  </div>
+
+                  <div class="col-md-5">
+                    <label for="cidade" class="form-label obrigatorio">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" name="cidade"
+                      required maxlength="80" aria-required="true" />
+                    <div class="invalid-feedback">Informe a cidade.</div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label for="estado" class="form-label obrigatorio">Estado (UF)</label>
+                    <select class="form-select" id="estado" name="estado" required aria-required="true">
+                      <option value="" selected disabled>UF</option>
+                      <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                      <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                      <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                      <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                      <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                      <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                      <option>SP</option><option>SE</option><option>TO</option>
+                    </select>
+                    <div class="invalid-feedback">Selecione o estado.</div>
+                  </div>
+
+                </div>
+              </fieldset>
+
+              <!-- ===== DADOS DO PET ===== -->
+              <fieldset class="secao-formulario">
+                <legend><h4><i class="bi bi-paw-fill me-1" aria-hidden="true"></i>Dados do Pet</h4></legend>
+
+                <div class="row g-3">
+
+                  <div class="col-md-4">
+                    <label for="pet-nome" class="form-label obrigatorio">Nome do pet</label>
+                    <input type="text" class="form-control" id="pet-nome" name="pet-nome"
+                      placeholder="Ex.: Rex" required maxlength="60" aria-required="true" />
+                    <div class="invalid-feedback">Informe o nome do pet.</div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="pet-especie" class="form-label obrigatorio">Espécie</label>
+                    <select class="form-select" id="pet-especie" name="pet-especie" required aria-required="true">
+                      <option value="" selected disabled>Selecione…</option>
+                      <option value="cao">Cão</option>
+                      <option value="gato">Gato</option>
+                      <option value="ave">Ave</option>
+                      <option value="roedor">Roedor</option>
+                      <option value="outro">Outro</option>
+                    </select>
+                    <div class="invalid-feedback">Selecione a espécie.</div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="pet-raca" class="form-label obrigatorio">Raça</label>
+                    <input type="text" class="form-control" id="pet-raca" name="pet-raca"
+                      placeholder="Ex.: Golden Retriever" required maxlength="60" aria-required="true" />
+                    <div class="invalid-feedback">Informe a raça (ou SRD).</div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label for="pet-idade" class="form-label obrigatorio">Idade (anos)</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="pet-idade"
+                      name="pet-idade"
+                      min="0"
+                      max="30"
+                      step="1"
+                      placeholder="Ex.: 3"
+                      required
+                      aria-required="true"
+                    />
+                    <div class="invalid-feedback">Informe a idade entre 0 e 30.</div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label for="pet-peso" class="form-label">Peso aprox. (kg)</label>
+                    <input type="number" class="form-control" id="pet-peso" name="pet-peso"
+                      min="0.1" max="150" step="0.1" placeholder="Ex.: 12.5" />
+                  </div>
+
+                  <div class="col-md-3">
+                    <label class="form-label obrigatorio" id="label-pet-sexo">Sexo do pet</label>
+                    <div class="d-flex gap-3 mt-1" role="group" aria-labelledby="label-pet-sexo">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pet-sexo" id="pet-sexo-m" value="M" required />
+                        <label class="form-check-label" for="pet-sexo-m">Macho</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pet-sexo" id="pet-sexo-f" value="F" />
+                        <label class="form-check-label" for="pet-sexo-f">Fêmea</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label class="form-label">Castrado?</label>
+                    <div class="form-check form-switch mt-1">
+                      <input class="form-check-input" type="checkbox" id="pet-castrado" name="pet-castrado"
+                        role="switch" aria-checked="false" />
+                      <label class="form-check-label" for="pet-castrado">Sim, é castrado</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="pet-obs" class="form-label">Observações / Condições especiais</label>
+                    <textarea class="form-control" id="pet-obs" name="pet-obs"
+                      rows="3" maxlength="500"
+                      placeholder="Alergias, medicamentos, comportamento, etc."></textarea>
+                    <div class="form-text">Máximo 500 caracteres.</div>
+                  </div>
+
+                </div>
+              </fieldset>
+
+              <!-- ===== ACEITE ===== -->
+              <div class="mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="aceite-termos"
+                    name="aceite-termos" required aria-required="true" />
+                  <label class="form-check-label" for="aceite-termos">
+                    Autorizo o uso dos dados para fins de cadastro e comunicação com o PetFeliz.
+                    <span class="text-danger">*</span>
+                  </label>
+                  <div class="invalid-feedback">Você precisa aceitar para continuar.</div>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="aceite-email" name="aceite-email" />
+                  <label class="form-check-label" for="aceite-email">
+                    Quero receber novidades e promoções por e-mail.
+                  </label>
+                </div>
+              </div>
+
+              <!-- BOTÃO -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-petfeliz btn-lg px-5">
+                  <i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>Realizar Cadastro
+                </button>
+                <button type="reset" class="btn btn-outline-secondary btn-lg ms-3">
+                  <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i>Limpar
+                </button>
+              </div>
+
+            </form>
+          </div><!-- /form-section -->
+        </div><!-- /col -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6><i class="bi bi-paw-fill me-1" aria-hidden="true"></i>PetFeliz Petshop</h6>
+          <p class="small opacity-75">Rua dos Animais, 123 – Centro</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Navegação</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="agendamento.html">Agendamento</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Contato</h6>
+          <ul class="list-unstyled small">
+            <li><a href="tel:+55313333444">(31) 3333-4444</a></li>
+            <li><a href="mailto:contato@petfeliz.com.br">contato@petfeliz.com.br</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="rodape-copy text-center">
+        <p class="mb-0">&copy; 2025 PetFeliz Petshop. Desenvolvido por João da Silva – Fundamentos de Sistemas Web.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmYfn3Z2LcxYGPt6zo0xCqDQkHi" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
