@@ -32,6 +32,7 @@
           <li class="nav-item"><a class="nav-link" href="servicos.html"><i class="bi bi-scissors me-1" aria-hidden="true"></i>Serviços</a></li>
           <li class="nav-item"><a class="nav-link" href="cadastro.html"><i class="bi bi-person-fill-add me-1" aria-hidden="true"></i>Cadastro</a></li>
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="agendamento.html"><i class="bi bi-calendar-check-fill me-1" aria-hidden="true"></i>Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link" href="ajuda.html"><i class="bi bi-question-circle-fill me-1" aria-hidden="true"></i>Ajuda</a></li>
         </ul>
       </div>
     </div>
@@ -105,6 +106,7 @@
           >
             <i class="bi bi-calendar-check-fill me-2" aria-hidden="true"></i>
             <strong>Agendamento realizado!</strong> Você receberá uma confirmação por e-mail e WhatsApp.
+            <div id="resumo-agendamento" class="small mt-2 fw-normal"></div>
           </div>
 
           <!-- FORMULÁRIO DE AGENDAMENTO -->
@@ -207,6 +209,10 @@
                     />
                     <span class="form-text" id="data-ajuda">Atendemos de segunda a sábado.</span>
                     <div class="invalid-feedback">Selecione uma data válida (a partir de hoje).</div>
+                    <p id="aviso-domingo" class="text-danger small mt-1 mb-0" style="display:none;" role="alert">
+                      <i class="bi bi-exclamation-triangle-fill me-1" aria-hidden="true"></i>
+                      Não atendemos aos domingos. Por favor, escolha outro dia.
+                    </p>
                   </div>
 
                   <div class="col-md-6">
@@ -254,24 +260,30 @@
                     <div class="input-group">
                       <input type="text" class="form-control" id="tb-cep" name="tb-cep"
                         placeholder="00000-000" maxlength="9" inputmode="numeric"
-                        oninput="mascaraCEP(this)" aria-required="true" />
+                        oninput="mascaraCEP(this)" data-obrigatorio aria-required="true"
+                        aria-describedby="tb-cep-ajuda" />
                       <button type="button" class="btn btn-outline-secondary"
+                        onclick="buscarCEP('tb-')"
                         aria-label="Buscar endereço pelo CEP para tele-busca">
                         <i class="bi bi-search" aria-hidden="true"></i>
                       </button>
+                      <div class="invalid-feedback">Informe o CEP para a tele-busca.</div>
                     </div>
+                    <span class="form-text" id="tb-cep-ajuda"></span>
                   </div>
 
                   <div class="col-md-8">
                     <label for="tb-logradouro" class="form-label obrigatorio">Logradouro</label>
                     <input type="text" class="form-control" id="tb-logradouro" name="tb-logradouro"
-                      placeholder="Rua, Avenida…" maxlength="150" aria-required="true" />
+                      placeholder="Rua, Avenida…" maxlength="150" data-obrigatorio aria-required="true" />
+                    <div class="invalid-feedback">Informe o logradouro para a tele-busca.</div>
                   </div>
 
                   <div class="col-md-3">
                     <label for="tb-numero" class="form-label obrigatorio">Número</label>
                     <input type="text" class="form-control" id="tb-numero" name="tb-numero"
-                      placeholder="Ex.: 45" maxlength="10" aria-required="true" />
+                      placeholder="Ex.: 45" maxlength="10" data-obrigatorio aria-required="true" />
+                    <div class="invalid-feedback">Informe o número.</div>
                   </div>
 
                   <div class="col-md-4">
@@ -283,7 +295,8 @@
                   <div class="col-md-5">
                     <label for="tb-bairro" class="form-label obrigatorio">Bairro</label>
                     <input type="text" class="form-control" id="tb-bairro" name="tb-bairro"
-                      maxlength="80" aria-required="true" />
+                      maxlength="80" data-obrigatorio aria-required="true" />
+                    <div class="invalid-feedback">Informe o bairro.</div>
                   </div>
 
                 </div>
@@ -336,6 +349,7 @@
             <li><a href="servicos.html">Serviços</a></li>
             <li><a href="cadastro.html">Cadastro</a></li>
             <li><a href="agendamento.html">Agendamento</a></li>
+            <li><a href="ajuda.html">Ajuda</a></li>
           </ul>
         </div>
         <div class="col-md-4">
@@ -347,7 +361,7 @@
         </div>
       </div>
       <div class="rodape-copy text-center">
-        <p class="mb-0">&copy; 2025 PetFeliz Petshop. Desenvolvido por João da Silva – Fundamentos de Sistemas Web.</p>
+        <p class="mb-0">&copy; <span class="ano-atual">2026</span> PetFeliz Petshop. Desenvolvido por João da Silva – Fundamentos de Sistemas Web.</p>
       </div>
     </div>
   </footer>

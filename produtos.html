@@ -1,72 +1,255 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="fase2_estilo.css">
-  <title>PetFeliz Petshop</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PetFeliz – Catálogo de produtos: ração, acessórios e higiene para o seu pet." />
+  <title>Produtos – PetFeliz Petshop</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/estilo.css" />
 </head>
 <body>
 
-  <header>
-    <h1>PetFeliz Petshop</h1>
-    <p>Cuidando do seu melhor amigo com amor e dedicação!</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-      </ul>
-    </nav>
-    <hr>
+  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-petfeliz sticky-top shadow" aria-label="Navegação principal">
+    <div class="container">
+      <a class="navbar-brand fs-4" href="index.html">
+        <i class="bi bi-paw-fill me-2" aria-hidden="true"></i>PetFeliz
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal"
+        aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarPrincipal">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill me-1" aria-hidden="true"></i>Início</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="produtos.html"><i class="bi bi-bag-fill me-1" aria-hidden="true"></i>Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicos.html"><i class="bi bi-scissors me-1" aria-hidden="true"></i>Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro.html"><i class="bi bi-person-fill-add me-1" aria-hidden="true"></i>Cadastro</a></li>
+          <li class="nav-item"><a class="nav-link" href="agendamento.html"><i class="bi bi-calendar-check-fill me-1" aria-hidden="true"></i>Agendamento</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-section py-5">
+    <div class="container">
+      <h1 class="fw-bold"><i class="bi bi-bag-fill me-2" aria-hidden="true"></i>Nossos Produtos</h1>
+      <p class="lead mb-0">Ração, acessórios e produtos de higiene selecionados com carinho para o seu pet.</p>
+    </div>
   </header>
 
-  <main>
-    <h2>Bem-vindo à PetFeliz!</h2>
+  <!-- CONTEÚDO -->
+  <main id="conteudo-principal" class="py-5">
+    <div class="container">
 
-    <p>
-      A <strong>PetFeliz</strong> é uma loja especializada em produtos e serviços para animais de estimação.
-      Aqui você encontra tudo que seu pet precisa para ter uma vida feliz, saudável e cheia de carinho.
-    </p>
+      <!-- FILTRO POR CATEGORIA -->
+      <section aria-label="Filtro de produtos por categoria" class="mb-5">
+        <h2 class="titulo-secao mb-4">Filtrar por categoria</h2>
+        <div class="d-flex flex-wrap gap-2" role="group" aria-label="Botões de filtro de categoria">
+          <button type="button" class="btn btn-petfeliz btn-filtro" data-categoria="todos" aria-pressed="true">
+            <i class="bi bi-grid-fill me-1" aria-hidden="true"></i>Todos
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-filtro" data-categoria="racao" aria-pressed="false">
+            <i class="bi bi-egg-fried me-1" aria-hidden="true"></i>Ração
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-filtro" data-categoria="acessorios" aria-pressed="false">
+            <i class="bi bi-bag-heart-fill me-1" aria-hidden="true"></i>Acessórios
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-filtro" data-categoria="higiene" aria-pressed="false">
+            <i class="bi bi-droplet-fill me-1" aria-hidden="true"></i>Higiene
+          </button>
+        </div>
+        <p id="contador-produtos" class="text-muted small mt-3 mb-0" aria-live="polite">6 produtos encontrados</p>
+      </section>
 
-    <p>
-      Estamos localizados na <strong>Rua dos Animais, 123 - Centro</strong>, atendendo de
-      <strong>segunda a sábado, das 8h às 18h</strong>.
-    </p>
+      <!-- GRID DE PRODUTOS -->
+      <section aria-label="Lista de produtos">
+        <div class="row g-4">
 
-    <h3>O que você encontra aqui?</h3>
-    <ul>
-      <li>Rações premium para cães e gatos</li>
-      <li>Acessórios e brinquedos para pets</li>
-      <li>Produtos de higiene e cuidados</li>
-      <li>Serviços de banho e tosa</li>
-      <li>Consultas veterinárias</li>
-      <li>Vacinação</li>
-    </ul>
+          <!-- RAÇÃO 1 -->
+          <div class="col-sm-6 col-lg-4 card-produto-wrapper" data-categoria="racao">
+            <div class="card card-produto">
+              <img
+                src="https://placehold.co/400x300/2e7d32/ffffff?text=Ra%C3%A7%C3%A3o+Premium"
+                class="card-img-top"
+                alt="Pacote de ração premium para cães adultos, sabor carne, embalagem de 15 quilos"
+              />
+              <div class="card-body d-flex flex-column">
+                <span class="badge bg-success mb-2 align-self-start">Ração</span>
+                <h3 class="card-title h5">Ração Premium Cães Adultos</h3>
+                <p class="card-text text-muted small flex-grow-1">
+                  Ração seca completa para cães adultos de porte médio e grande. Formulada com
+                  proteínas de alta qualidade, vitaminas e minerais essenciais. Embalagem de 15&nbsp;kg.
+                </p>
+                <p class="preco mb-0">R$ 89,90</p>
+              </div>
+            </div>
+          </div>
 
-    <h3>Navegue pelo nosso site</h3>
-    <ul>
-      <li><a href="produtos.html">Ver Produtos</a> - Conheça nossas categorias de produtos com preços e descrições.</li>
-      <li><a href="servicos.html">Ver Serviços</a> - Saiba mais sobre os serviços disponíveis no petshop.</li>
-    </ul>
+          <!-- RAÇÃO 2 -->
+          <div class="col-sm-6 col-lg-4 card-produto-wrapper" data-categoria="racao">
+            <div class="card card-produto">
+              <img
+                src="https://placehold.co/400x300/2e7d32/ffffff?text=Ra%C3%A7%C3%A3o+Filhotes"
+                class="card-img-top"
+                alt="Pacote de ração para filhotes sabor frango, embalagem de 3 quilos"
+              />
+              <div class="card-body d-flex flex-column">
+                <span class="badge bg-success mb-2 align-self-start">Ração</span>
+                <h3 class="card-title h5">Ração Filhotes Sabor Frango</h3>
+                <p class="card-text text-muted small flex-grow-1">
+                  Especialmente formulada para filhotes de cães até 12 meses. Rica em DHA para o
+                  desenvolvimento cerebral e cálcio para ossos fortes. Embalagem de 3&nbsp;kg.
+                </p>
+                <p class="preco mb-0">R$ 64,90</p>
+              </div>
+            </div>
+          </div>
 
-    <h3>Fale Conosco</h3>
-    <p>Telefone: (31) 3333-4444</p>
-    <p>WhatsApp: (31) 99999-8888</p>
-    <p>E-mail: contato@petfeliz.com.br</p>
+          <!-- ACESSÓRIO 1 -->
+          <div class="col-sm-6 col-lg-4 card-produto-wrapper" data-categoria="acessorios">
+            <div class="card card-produto">
+              <img
+                src="https://placehold.co/400x300/1565c0/ffffff?text=Coleira+Nylon"
+                class="card-img-top"
+                alt="Coleira ajustável de nylon com fivela de segurança, nas cores azul e verde"
+              />
+              <div class="card-body d-flex flex-column">
+                <span class="badge bg-primary mb-2 align-self-start">Acessórios</span>
+                <h3 class="card-title h5">Coleira Ajustável de Nylon</h3>
+                <p class="card-text text-muted small flex-grow-1">
+                  Coleira resistente com fivela de segurança e regulagem de tamanho. Disponível nos
+                  tamanhos P, M e G, com anel metálico reforçado para guia.
+                </p>
+                <p class="preco mb-0">R$ 29,90</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACESSÓRIO 2 -->
+          <div class="col-sm-6 col-lg-4 card-produto-wrapper" data-categoria="acessorios">
+            <div class="card card-produto">
+              <img
+                src="https://placehold.co/400x300/1565c0/ffffff?text=Cama+Pet"
+                class="card-img-top"
+                alt="Cama pet ortopédica redonda com capa removível na cor cinza"
+              />
+              <div class="card-body d-flex flex-column">
+                <span class="badge bg-primary mb-2 align-self-start">Acessórios</span>
+                <h3 class="card-title h5">Cama Pet Ortopédica</h3>
+                <p class="card-text text-muted small flex-grow-1">
+                  Espuma ortopédica de alta densidade, ideal para pets com problemas articulares ou
+                  idade avançada. Capa removível e lavável. Tamanho 70x50&nbsp;cm, suporta até 20&nbsp;kg.
+                </p>
+                <p class="preco mb-0">R$ 119,90</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- HIGIENE 1 -->
+          <div class="col-sm-6 col-lg-4 card-produto-wrapper" data-categoria="higiene">
+            <div class="card card-produto">
+              <img
+                src="https://placehold.co/400x300/6a1b9a/ffffff?text=Shampoo+Pet"
+                class="card-img-top"
+                alt="Frasco de shampoo neutro para cães, com fragrância de lavanda, 500 mililitros"
+              />
+              <div class="card-body d-flex flex-column">
+                <span class="badge bg-purple mb-2 align-self-start" style="background:#6a1b9a;">Higiene</span>
+                <h3 class="card-title h5">Shampoo Neutro para Cães</h3>
+                <p class="card-text text-muted small flex-grow-1">
+                  pH neutro formulado para a pele e pelagem dos cães. Hipoalergênico, livre de
+                  parabenos e corantes artificiais. Fragrância suave de lavanda. Frasco de 500&nbsp;ml.
+                </p>
+                <p class="preco mb-0">R$ 24,90</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- HIGIENE 2 -->
+          <div class="col-sm-6 col-lg-4 card-produto-wrapper" data-categoria="higiene">
+            <div class="card card-produto">
+              <img
+                src="https://placehold.co/400x300/6a1b9a/ffffff?text=Kit+Dental"
+                class="card-img-top"
+                alt="Kit de escova dental para pets com escova dupla e pasta sabor carne"
+              />
+              <div class="card-body d-flex flex-column">
+                <span class="badge bg-purple mb-2 align-self-start" style="background:#6a1b9a;">Higiene</span>
+                <h3 class="card-title h5">Kit Escova Dental Pet</h3>
+                <p class="card-text text-muted small flex-grow-1">
+                  Kit completo para higiene bucal, com escova dupla (cabo longo e dedeira), pasta
+                  dental sabor carne e manual de instruções. Previne tártaro e mau hálito.
+                </p>
+                <p class="preco mb-0">R$ 18,50</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center mt-5">
+        <p class="text-muted mb-3">Quer agendar um banho ou tosa para o seu pet?</p>
+        <a href="servicos.html" class="btn btn-outline-secondary btn-lg me-2">
+          <i class="bi bi-scissors me-1" aria-hidden="true"></i>Ver Serviços
+        </a>
+        <a href="agendamento.html" class="btn btn-destaque btn-lg">
+          <i class="bi bi-calendar-plus me-1" aria-hidden="true"></i>Agendar Agora
+        </a>
+      </section>
+
+    </div>
   </main>
 
-  <hr>
-  <footer>
-    <p><strong>PetFeliz Petshop</strong> &copy; 2025 - Todos os direitos reservados.</p>
-    <p>Desenvolvido por: João da Silva | Disciplina: Fundamentos de Sistemas Web</p>
-    <p>Contato: contato@petfeliz.com.br | Telefone: (31) 3333-4444</p>
-    <nav>
-      <a href="index.html">Início</a> |
-      <a href="produtos.html">Produtos</a> |
-      <a href="servicos.html">Serviços</a>
-    </nav>
+  <!-- RODAPÉ -->
+  <footer class="rodape" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6><i class="bi bi-paw-fill me-1" aria-hidden="true"></i>PetFeliz Petshop</h6>
+          <p class="small opacity-75">Rua dos Animais, 123 – Centro</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Navegação</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="agendamento.html">Agendamento</a></li>
+            <li><a href="ajuda.html">Ajuda</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Contato</h6>
+          <ul class="list-unstyled small">
+            <li><a href="tel:+55313333444">(31) 3333-4444</a></li>
+            <li><a href="mailto:contato@petfeliz.com.br">contato@petfeliz.com.br</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="rodape-copy text-center">
+        <p class="mb-0">&copy; <span class="ano-atual">2026</span> PetFeliz Petshop. Desenvolvido por João da Silva – Fundamentos de Sistemas Web.</p>
+      </div>
+    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmYfn3Z2LcxYGPt6zo0xCqDQkHi" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>

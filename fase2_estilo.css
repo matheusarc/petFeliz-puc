@@ -1,159 +1,556 @@
 /* ============================================================
-   ESTILO ADAPTADO – PetFeliz (produtos + serviços)
+   estilo.css – PetFeliz Petshop
+   Folha de estilos personalizada (usada em conjunto com Bootstrap 5)
    ============================================================ */
 
-/* ---------- VARIÁVEIS ---------- */
+/* ---------- VARIÁVEIS DE COR / IDENTIDADE VISUAL ---------- */
 :root {
-  --cor-principal: #2e7d32;
-  --cor-secundaria: #81c784;
-  --cor-destaque: #ff8f00;
+  --cor-principal: #2e7d32;      /* verde petshop */
+  --cor-principal-escura: #1b5e20;
+  --cor-secundaria: #81c784;     /* verde claro */
+  --cor-destaque: #ff8f00;       /* laranja - CTA / foco */
+  --cor-destaque-escura: #e65100;
   --cor-texto: #212121;
-  --cor-fundo: #f9fbe7;
+  --cor-texto-claro: #5f6368;
+  --cor-fundo: #f9fbe7;          /* verde-amarelado muito claro */
+  --cor-card: #ffffff;
   --cor-rodape: #1b5e20;
+  --raio-borda: 14px;
+  --sombra-suave: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --sombra-forte: 0 10px 28px rgba(0, 0, 0, 0.16);
+  --transicao: 0.25s ease;
 }
 
-/* ---------- GERAL ---------- */
+/* ---------- BASE ---------- */
+* {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Roboto, Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
-  margin: 0;
 }
 
-/* ---------- HEADER ---------- */
-header {
-  background: linear-gradient(135deg, var(--cor-principal), var(--cor-secundaria));
-  color: white;
-  text-align: center;
-  padding: 30px 15px;
+main {
+  outline: none;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.2rem;
-}
-
-header p {
-  margin: 10px 0 15px;
-}
-
-/* ---------- MENU ---------- */
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
+.titulo-secao {
+  color: var(--cor-principal-escura);
+  font-weight: 700;
+  position: relative;
   display: inline-block;
-  margin: 0 10px;
 }
 
-nav a {
-  color: white;
+.titulo-secao::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  background: var(--cor-destaque);
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.text-center .titulo-secao::after,
+.titulo-secao.w-100::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- ACESSIBILIDADE: SKIP LINK ---------- */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  background: var(--cor-destaque);
+  color: #fff;
+  padding: 10px 18px;
+  font-weight: 700;
+  z-index: 2000;
+  border-radius: 0 0 8px 0;
+  transition: top var(--transicao);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #fff;
+  outline-offset: -6px;
+}
+
+/* ---------- ACESSIBILIDADE: FOCO VISÍVEL ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible,
+.form-check-input:focus-visible,
+.card-agendamento:focus-within {
+  outline: 3px solid var(--cor-destaque) !important;
+  outline-offset: 2px;
+  box-shadow: none !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--cor-principal);
+  box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+}
+
+/* Classe utilitária para texto somente leitores de tela (visualmente oculto) */
+.visualmente-oculto {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar-petfeliz {
+  background: linear-gradient(135deg, var(--cor-principal-escura), var(--cor-principal));
+}
+
+.navbar-petfeliz .navbar-brand,
+.navbar-petfeliz .nav-link {
+  color: #f1f8e9 !important;
   font-weight: 600;
-  text-decoration: none;
+  transition: color var(--transicao);
 }
 
-nav a:hover {
+.navbar-petfeliz .nav-link.active {
+  color: #ffffff !important;
+  position: relative;
+}
+
+.navbar-petfeliz .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: -2px;
+  height: 3px;
+  background: var(--cor-destaque);
+  border-radius: 3px;
+}
+
+.navbar-petfeliz .nav-link:hover {
+  color: var(--cor-destaque) !important;
+}
+
+/* ---------- BANNER DE FUNCIONAMENTO ---------- */
+#banner-funcionamento {
+  border-radius: 0;
+  letter-spacing: 0.3px;
+}
+
+/* ---------- HERO ---------- */
+.hero-section {
+  background: linear-gradient(135deg, var(--cor-principal-escura), var(--cor-principal) 55%, var(--cor-secundaria));
+  color: #ffffff;
+  text-align: center;
+  padding: 70px 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "🐾";
+  position: absolute;
+  font-size: 14rem;
+  opacity: 0.08;
+  right: -2rem;
+  top: -3rem;
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+
+.hero-section h1 {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- BOTÕES PERSONALIZADOS ---------- */
+.btn-petfeliz {
+  background-color: var(--cor-principal);
+  border-color: var(--cor-principal);
+  color: #fff;
+  font-weight: 600;
+  transition: transform var(--transicao), box-shadow var(--transicao), background-color var(--transicao);
+}
+
+.btn-petfeliz:hover,
+.btn-petfeliz:focus {
+  background-color: var(--cor-principal-escura);
+  border-color: var(--cor-principal-escura);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-suave);
+}
+
+.btn-destaque {
+  background-color: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+  color: #fff;
+  font-weight: 700;
+  transition: transform var(--transicao), box-shadow var(--transicao), background-color var(--transicao);
+}
+
+.btn-destaque:hover,
+.btn-destaque:focus {
+  background-color: var(--cor-destaque-escura);
+  border-color: var(--cor-destaque-escura);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-suave);
+}
+
+/* ---------- RELÓGIO DIGITAL ---------- */
+.card-horario {
+  border: none;
+  border-radius: var(--raio-borda);
+  background: linear-gradient(135deg, #ffffff, #f1f8e9);
+}
+
+#relogio-digital {
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--cor-principal-escura);
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* ---------- CARROSSEL ---------- */
+.carousel-petfeliz {
+  overflow: hidden;
+}
+
+.carousel-petfeliz .carousel-item img {
+  object-fit: cover;
+  height: 380px;
+}
+
+.carousel-petfeliz .carousel-caption {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: var(--raio-borda);
+  padding: 14px 20px;
+  bottom: 30px;
+}
+
+.carousel-petfeliz .carousel-control-prev,
+.carousel-petfeliz .carousel-control-next {
+  width: 8%;
+}
+
+.carousel-petfeliz .carousel-indicators [data-bs-target] {
+  background-color: var(--cor-destaque);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .carousel-petfeliz .carousel-item img {
+    height: 230px;
+  }
+}
+
+/* ---------- CARDS GENÉRICOS / DIFERENCIAIS ---------- */
+.card-diferencial,
+.row.g-4 > div > .p-4.rounded-4 {
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.row.g-4 > div > .p-4.rounded-4:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-forte);
+}
+
+/* ---------- CARDS DE PRODUTO ---------- */
+.card-produto {
+  border: none;
+  border-radius: var(--raio-borda);
+  overflow: hidden;
+  background: var(--cor-card);
+  box-shadow: var(--sombra-suave);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+  height: 100%;
+}
+
+.card-produto:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-forte);
+}
+
+.card-produto .card-img-top {
+  height: 190px;
+  object-fit: cover;
+}
+
+.card-produto .card-title {
+  color: var(--cor-principal-escura);
+  font-weight: 700;
+}
+
+.card-produto .preco {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--cor-principal);
+}
+
+.card-produto-wrapper {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Botões de filtro de produtos */
+.btn-filtro {
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all var(--transicao);
+}
+
+.btn-filtro:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- CARDS DE SERVIÇO ---------- */
+.card-servico {
+  border: none;
+  border-radius: var(--raio-borda);
+  background: var(--cor-card);
+  box-shadow: var(--sombra-suave);
+  padding: 2rem;
+  height: 100%;
+  transition: transform var(--transicao), box-shadow var(--transicao);
+  border-top: 6px solid var(--cor-principal);
+}
+
+.card-servico:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-forte);
+}
+
+.card-servico .icone-servico {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.card-servico .preco-servico {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--cor-destaque-escura);
+}
+
+.lista-servico-itens {
+  list-style: none;
+  padding-left: 0;
+}
+
+.lista-servico-itens li {
+  padding: 4px 0;
+}
+
+.lista-servico-itens li i {
+  color: var(--cor-principal);
+  margin-right: 6px;
+}
+
+/* ---------- CARDS DE AGENDAMENTO (MÉTODO) ---------- */
+.card-agendamento {
+  border: 2px solid #e0e0e0;
+  border-radius: var(--raio-borda);
+  background: var(--cor-card);
+  transition: border-color var(--transicao), box-shadow var(--transicao), transform var(--transicao);
+  position: relative;
+}
+
+.card-agendamento:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-suave);
+}
+
+.card-agendamento:has(input:checked) {
+  border-color: var(--cor-principal);
+  background: #f1f8e9;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+.card-agendamento input[type="radio"] {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+.card-agendamento .form-check-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+/* ---------- FORMULÁRIOS ---------- */
+.form-section {
+  background: var(--cor-card);
+  border-radius: var(--raio-borda);
+  padding: 2rem;
+  box-shadow: var(--sombra-suave);
+}
+
+.form-section h2 {
+  color: var(--cor-principal-escura);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.secao-formulario {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--raio-borda);
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
+  background: #fcfdf7;
+}
+
+.secao-formulario legend h4 {
+  color: var(--cor-principal);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+label.obrigatorio::after {
+  content: " *";
+  color: #c62828;
+  font-weight: 700;
+}
+
+.alerta-sucesso {
+  display: none;
+  border-radius: var(--raio-borda);
+  border: none;
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  font-size: 1.05rem;
+}
+
+/* ---------- RODAPÉ ---------- */
+.rodape {
+  background-color: var(--cor-rodape);
+  color: #e8f5e9;
+  padding: 50px 0 20px;
+}
+
+.rodape h6 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.rodape a {
+  color: #c8e6c9;
+  text-decoration: none;
+  transition: color var(--transicao);
+}
+
+.rodape a:hover {
   color: var(--cor-destaque);
   text-decoration: underline;
 }
 
-/* ---------- MAIN ---------- */
-main {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* ---------- TÍTULOS ---------- */
-h2 {
-  color: var(--cor-principal);
-}
-
-h3 {
-  border-left: 5px solid var(--cor-principal);
-  padding-left: 10px;
+.rodape-copy {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   margin-top: 30px;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  opacity: 0.85;
 }
 
-/* ---------- SEÇÕES ---------- */
-section {
-  margin-bottom: 40px;
+/* ---------- BOTÃO "VOLTAR AO TOPO" ---------- */
+#btn-topo {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1500;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: var(--sombra-forte);
 }
 
-/* ---------- PRODUTOS (articles) ---------- */
-article {
-  background: #fff;
-  border-radius: 12px;
-  padding: 15px;
-  margin: 20px 0;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+#btn-topo.mostrar {
+  display: flex;
+  animation: fadeIn 0.3s ease;
 }
 
-article:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* ---------- IMAGENS ---------- */
-article img {
-  display: block;
-  margin: 10px auto;
-  border-radius: 8px;
-}
-
-/* ---------- PREÇO ---------- */
-article p strong:last-child,
-article p:last-of-type {
-  font-size: 1.2rem;
-  color: var(--cor-principal);
-  font-weight: bold;
-}
-
-/* ---------- LISTAS ---------- */
-ul {
-  padding-left: 20px;
-}
-
-/* ---------- RODAPÉ ---------- */
-footer {
-  background-color: var(--cor-rodape);
-  color: #e8f5e9;
-  text-align: center;
-  padding: 20px;
-}
-
-footer a {
-  color: #a5d6a7;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: white;
-}
-
-/* ---------- LINHA ---------- */
-hr {
+/* ---------- PÁGINA DE AJUDA ---------- */
+.ajuda-card {
   border: none;
-  height: 1px;
-  background: #ccc;
-  margin: 20px 0;
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-suave);
 }
 
-/* ---------- RESPONSIVO ---------- */
+.accordion-button:not(.collapsed) {
+  background-color: #e8f5e9;
+  color: var(--cor-principal-escura);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+}
+
+/* ---------- RESPONSIVIDADE GERAL ---------- */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 1.6rem;
+  .hero-section {
+    padding: 45px 15px;
   }
 
-  nav ul li {
-    display: block;
-    margin: 8px 0;
+  .hero-section h1 {
+    font-size: 1.7rem;
   }
 
-  article {
-    padding: 10px;
+  #relogio-digital {
+    font-size: 1.8rem;
+  }
+
+  .form-section {
+    padding: 1.25rem;
+  }
+
+  .secao-formulario {
+    padding: 1rem;
+  }
+}
+
+/* ---------- PREFERÊNCIA POR MENOS MOVIMENTO (ACESSIBILIDADE) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

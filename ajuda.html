@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PetFeliz – Página de ajuda com explicações sobre todas as funcionalidades do site." />
+  <title>Ajuda – PetFeliz Petshop</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/estilo.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-petfeliz sticky-top shadow" aria-label="Navegação principal">
+    <div class="container">
+      <a class="navbar-brand fs-4" href="index.html">
+        <i class="bi bi-paw-fill me-2" aria-hidden="true"></i>PetFeliz
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal"
+        aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarPrincipal">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill me-1" aria-hidden="true"></i>Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="produtos.html"><i class="bi bi-bag-fill me-1" aria-hidden="true"></i>Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicos.html"><i class="bi bi-scissors me-1" aria-hidden="true"></i>Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro.html"><i class="bi bi-person-fill-add me-1" aria-hidden="true"></i>Cadastro</a></li>
+          <li class="nav-item"><a class="nav-link" href="agendamento.html"><i class="bi bi-calendar-check-fill me-1" aria-hidden="true"></i>Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="ajuda.html"><i class="bi bi-question-circle-fill me-1" aria-hidden="true"></i>Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-section py-5">
+    <div class="container">
+      <h1 class="fw-bold"><i class="bi bi-question-circle-fill me-2" aria-hidden="true"></i>Central de Ajuda</h1>
+      <p class="lead mb-0">Entenda como usar cada funcionalidade do site PetFeliz Petshop.</p>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main id="conteudo-principal" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+          <div class="ajuda-card bg-white p-4 p-md-5 mb-5">
+            <h2 class="titulo-secao mb-3">Sobre este arquivo de ajuda</h2>
+            <p class="text-muted">
+              Esta página reúne, em um só lugar, a explicação de todas as funcionalidades
+              disponíveis no site da PetFeliz Petshop: páginas, formulários, agendamento e
+              os recursos de acessibilidade implementados. Use os blocos abaixo (clicáveis)
+              para expandir cada tópico.
+            </p>
+          </div>
+
+          <!-- ACCORDION DE FUNCIONALIDADES -->
+          <div class="accordion shadow-sm" id="accordionAjuda">
+
+            <!-- 1. Navegação -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-nav">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse-nav" aria-expanded="true" aria-controls="collapse-nav">
+                  <i class="bi bi-compass-fill me-2" aria-hidden="true"></i>Navegação do site
+                </button>
+              </h2>
+              <div id="collapse-nav" class="accordion-collapse collapse show" aria-labelledby="heading-nav"
+                data-bs-parent="#accordionAjuda">
+                <div class="accordion-body">
+                  <p>O site é dividido em 6 páginas, acessíveis pelo menu no topo (navbar):</p>
+                  <ul>
+                    <li><strong>Início</strong> – apresentação da loja, carrossel de destaques, relógio e horário de funcionamento.</li>
+                    <li><strong>Produtos</strong> – catálogo de produtos com filtro por categoria (ração, acessórios, higiene).</li>
+                    <li><strong>Serviços</strong> – detalhes dos serviços de banho e tosa, com tabela de preços.</li>
+                    <li><strong>Cadastro</strong> – formulário de cadastro do cliente e do pet.</li>
+                    <li><strong>Agendamento</strong> – formulário para marcar banho ou tosa, com tele-busca ou entrega no local.</li>
+                    <li><strong>Ajuda</strong> – esta página.</li>
+                  </ul>
+                  <p class="mb-0">Em telas pequenas (celular), o menu se transforma em um botão de três linhas (☰) que abre a lista de páginas.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Carrossel e dinamismo -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-carrossel">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse-carrossel" aria-expanded="false" aria-controls="collapse-carrossel">
+                  <i class="bi bi-images me-2" aria-hidden="true"></i>Carrossel e relógio (página inicial)
+                </button>
+              </h2>
+              <div id="collapse-carrossel" class="accordion-collapse collapse" aria-labelledby="heading-carrossel"
+                data-bs-parent="#accordionAjuda">
+                <div class="accordion-body">
+                  <p>Na página inicial você encontra três recursos dinâmicos:</p>
+                  <ul>
+                    <li><strong>Carrossel de destaques</strong>: 4 slides que trocam automaticamente a cada 4 segundos. É possível navegar manualmente pelas setas laterais ou pelos indicadores (bolinhas) na parte inferior.</li>
+                    <li><strong>Relógio digital</strong>: mostra a hora atual (HH:MM:SS) e a data completa, atualizados em tempo real, segundo a segundo.</li>
+                    <li><strong>Banner de funcionamento</strong>: verifica automaticamente o dia e a hora do seu dispositivo e exibe se a loja está "aberta" (verde) ou "fechada" (amarelo), considerando o horário de segunda a sábado, das 8h às 18h.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Filtro de produtos -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-produtos">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse-produtos" aria-expanded="false" aria-controls="collapse-produtos">
+                  <i class="bi bi-funnel-fill me-2" aria-hidden="true"></i>Filtro de produtos
+                </button>
+              </h2>
+              <div id="collapse-produtos" class="accordion-collapse collapse" aria-labelledby="heading-produtos"
+                data-bs-parent="#accordionAjuda">
+                <div class="accordion-body">
+                  <p>Na página <strong>Produtos</strong>, use os botões "Todos", "Ração", "Acessórios" e
+                  "Higiene" para filtrar instantaneamente os produtos exibidos, sem precisar recarregar
+                  a página. O botão da categoria ativa fica destacado em verde, e um texto informa quantos
+                  produtos foram encontrados.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Cadastro -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-cadastro">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse-cadastro" aria-expanded="false" aria-controls="collapse-cadastro">
+                  <i class="bi bi-person-fill-add me-2" aria-hidden="true"></i>Formulário de cadastro
+                </button>
+              </h2>
+              <div id="collapse-cadastro" class="accordion-collapse collapse" aria-labelledby="heading-cadastro"
+                data-bs-parent="#accordionAjuda">
+                <div class="accordion-body">
+                  <p>A página <strong>Cadastro</strong> reúne os dados do cliente e do pet em um único formulário:</p>
+                  <ul>
+                    <li><strong>Dados do cliente</strong>: nome, CPF (com máscara automática e validação dos dígitos verificadores), data de nascimento, sexo (botões de opção), telefone (com máscara), e-mail e como conheceu a loja.</li>
+                    <li><strong>Endereço</strong>: CEP com busca automática (preenche rua, bairro, cidade e estado sozinho ao clicar na lupa), número, complemento e UF.</li>
+                    <li><strong>Dados do pet</strong>: nome, espécie, raça, idade, peso, sexo, se é castrado (interruptor) e observações (com contador de caracteres).</li>
+                    <li>Campos obrigatórios são marcados com um asterisco vermelho (<span class="text-danger fw-bold">*</span>) e validados antes do envio. Caso algo esteja incorreto, o campo é destacado em vermelho com uma mensagem explicando o problema.</li>
+                  </ul>
+                  <p class="mb-0">Ao enviar com sucesso, aparece uma mensagem de confirmação verde e o formulário é limpo automaticamente.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Agendamento -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-agendamento">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse-agendamento" aria-expanded="false" aria-controls="collapse-agendamento">
+                  <i class="bi bi-calendar-check-fill me-2" aria-hidden="true"></i>Agendamento de serviço
+                </button>
+              </h2>
+              <div id="collapse-agendamento" class="accordion-collapse collapse" aria-labelledby="heading-agendamento"
+                data-bs-parent="#accordionAjuda">
+                <div class="accordion-body">
+                  <p>Na página <strong>Agendamento</strong>, o processo segue estes passos:</p>
+                  <ol>
+                    <li>Escolha como prefere atender o pet: <strong>Entrega no local</strong> (cartão com ícone de pata) ou <strong>Tele-busca</strong> (cartão com ícone de carro). Ao marcar "Tele-busca", um bloco extra de endereço aparece automaticamente para você informar onde buscaremos o pet.</li>
+                    <li>Informe seus dados de contato e o nome do pet.</li>
+                    <li>Selecione o <strong>serviço</strong> (banho, tosa higiênica, tosa completa ou banho + tosa) e o <strong>porte</strong> do animal.</li>
+                    <li>Use o <strong>calendário</strong> (campo de data) para escolher o dia do atendimento — apenas datas a partir de hoje e dentro dos próximos 60 dias podem ser selecionadas, e domingos são automaticamente recusados, pois a loja não abre nesse dia.</li>
+                    <li>Escolha um dos <strong>horários</strong> disponíveis na lista.</li>
+                    <li>Confirme a ciência das condições e clique em "Confirmar Agendamento".</li>
+                  </ol>
+                  <p class="mb-0">Ao confirmar, você verá um resumo do agendamento (serviço, método e data/horário) dentro da mensagem de sucesso.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Acessibilidade -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-acessibilidade">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse-acessibilidade" aria-expanded="false" aria-controls="collapse-acessibilidade">
+                  <i class="bi bi-universal-access-circle me-2" aria-hidden="true"></i>Recursos de acessibilidade
+                </button>
+              </h2>
+              <div id="collapse-acessibilidade" class="accordion-collapse collapse" aria-labelledby="heading-acessibilidade"
+                data-bs-parent="#accordionAjuda">
+                <div class="accordion-body">
+                  <p>O site foi adaptado para ser mais utilizável por pessoas com deficiência visual e por quem navega com teclado ou leitor de tela:</p>
+                  <ul>
+                    <li><strong>Texto alternativo (<code>alt</code>)</strong> em todas as imagens, descrevendo o conteúdo visual para quem usa leitor de tela.</li>
+                    <li><strong>Link de pular para o conteúdo</strong> ("Ir para o conteúdo principal"), o primeiro elemento focável da página, que permite ignorar o menu repetitivo.</li>
+                    <li><strong>Foco visível</strong>: ao navegar com a tecla Tab, o elemento focado recebe um contorno laranja bem visível.</li>
+                    <li><strong>Atributos ARIA</strong> (<code>aria-label</code>, <code>aria-required</code>, <code>aria-live</code>, <code>role</code>) que descrevem botões, campos obrigatórios e regiões dinâmicas para tecnologias assistivas.</li>
+                    <li><strong>Avisos sonoros para leitores de tela</strong>: mensagens de sucesso, erro de validação e mudança de filtro são anunciadas automaticamente por uma região "viva" (live region), mesmo sem precisar olhar para a tela.</li>
+                    <li><strong>Estrutura semântica</strong> com <code>header</code>, <code>main</code>, <code>nav</code>, <code>footer</code>, <code>section</code> e <code>fieldset</code>/<code>legend</code> nos formulários.</li>
+                    <li><strong>Contraste de cores</strong> adequado entre texto e fundo, e respeito à preferência do sistema por "menos movimento" (<code>prefers-reduced-motion</code>), reduzindo animações quando ativada.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Dúvidas frequentes -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-faq">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse-faq" aria-expanded="false" aria-controls="collapse-faq">
+                  <i class="bi bi-chat-question-fill me-2" aria-hidden="true"></i>Dúvidas frequentes
+                </button>
+              </h2>
+              <div id="collapse-faq" class="accordion-collapse collapse" aria-labelledby="heading-faq"
+                data-bs-parent="#accordionAjuda">
+                <div class="accordion-body">
+                  <p><strong>O cadastro e o agendamento enviam meus dados para algum lugar?</strong><br>
+                  Não. Este é um projeto acadêmico de demonstração. Os formulários validam os dados no
+                  próprio navegador e exibem uma confirmação visual, mas não enviam as informações a um
+                  servidor ou banco de dados real.</p>
+                  <p><strong>Por que meu CEP não foi encontrado automaticamente?</strong><br>
+                  A busca de endereço usa o serviço público ViaCEP. Se a internet estiver instável ou o
+                  CEP não existir na base de dados, será necessário preencher o endereço manualmente.</p>
+                  <p class="mb-0"><strong>Posso agendar para qualquer data?</strong><br>
+                  Não. O calendário só permite escolher datas a partir de hoje, dentro dos próximos 60
+                  dias, e dias de domingo são bloqueados, pois a loja não funciona nesse dia.</p>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /accordion -->
+
+          <!-- CONTATO -->
+          <div class="text-center mt-5">
+            <p class="text-muted">Ainda com dúvidas? Fale com a gente:</p>
+            <a href="mailto:contato@petfeliz.com.br" class="btn btn-petfeliz me-2">
+              <i class="bi bi-envelope-fill me-1" aria-hidden="true"></i>Enviar e-mail
+            </a>
+            <a href="https://wa.me/5531999998888" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">
+              <i class="bi bi-whatsapp me-1" aria-hidden="true"></i>WhatsApp
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6><i class="bi bi-paw-fill me-1" aria-hidden="true"></i>PetFeliz Petshop</h6>
+          <p class="small opacity-75">Rua dos Animais, 123 – Centro</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Navegação</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="agendamento.html">Agendamento</a></li>
+            <li><a href="ajuda.html">Ajuda</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Contato</h6>
+          <ul class="list-unstyled small">
+            <li><a href="tel:+55313333444">(31) 3333-4444</a></li>
+            <li><a href="mailto:contato@petfeliz.com.br">contato@petfeliz.com.br</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="rodape-copy text-center">
+        <p class="mb-0">&copy; <span class="ano-atual">2026</span> PetFeliz Petshop. Desenvolvido por João da Silva – Fundamentos de Sistemas Web.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmYfn3Z2LcxYGPt6zo0xCqDQkHi" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

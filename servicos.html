@@ -1,164 +1,232 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="fase2_estilo.css">
-  <title>Produtos - PetFeliz Petshop</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PetFeliz – Serviços de banho e tosa, com opção de tele-busca ou entrega no local." />
+  <title>Serviços – PetFeliz Petshop</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/estilo.css" />
 </head>
 <body>
 
-  <header>
-    <h1>PetFeliz Petshop</h1>
-    <p>Cuidando do seu melhor amigo com amor e dedicação!</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-      </ul>
-    </nav>
-    <hr>
+  <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-petfeliz sticky-top shadow" aria-label="Navegação principal">
+    <div class="container">
+      <a class="navbar-brand fs-4" href="index.html">
+        <i class="bi bi-paw-fill me-2" aria-hidden="true"></i>PetFeliz
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal"
+        aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarPrincipal">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill me-1" aria-hidden="true"></i>Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="produtos.html"><i class="bi bi-bag-fill me-1" aria-hidden="true"></i>Produtos</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="servicos.html"><i class="bi bi-scissors me-1" aria-hidden="true"></i>Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro.html"><i class="bi bi-person-fill-add me-1" aria-hidden="true"></i>Cadastro</a></li>
+          <li class="nav-item"><a class="nav-link" href="agendamento.html"><i class="bi bi-calendar-check-fill me-1" aria-hidden="true"></i>Agendamento</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-section py-5">
+    <div class="container">
+      <h1 class="fw-bold"><i class="bi bi-scissors me-2" aria-hidden="true"></i>Nossos Serviços</h1>
+      <p class="lead mb-0">Banho e tosa profissionais, com tele-busca ou entrega no local.</p>
+    </div>
   </header>
 
-  <main>
-    <h2>Nossos Produtos</h2>
-    <p>Confira nossa seleção de produtos divididos por categoria. Temos tudo que seu pet precisa!</p>
+  <!-- CONTEÚDO -->
+  <main id="conteudo-principal" class="py-5">
+    <div class="container">
 
-    <section>
-      <h3>Categoria 1: Ração</h3>
-      <p>Alimentação balanceada e nutritiva para cães e gatos de todas as idades.</p>
+      <h2 class="titulo-secao mb-4">Banho e Tosa</h2>
+      <p class="text-muted mb-5" style="max-width:700px;">
+        A PetFeliz conta com uma equipe treinada e produtos de alta qualidade para deixar o
+        seu pet limpo, cheiroso e bem cuidado. Confira nossos dois serviços disponíveis abaixo.
+      </p>
 
-      <article>
-        <h4>Ração Premium Cães Adultos</h4>
-        <img
-          src="https://placehold.co/200x150?text=Racao+Premium"
-          alt="Foto da Ração Premium para Cães Adultos"
-          width="200"
-          height="150"
-        >
-        <p>
-          <strong>Descrição:</strong> Ração seca completa para cães adultos de porte médio e grande.
-          Formulada com proteínas de alta qualidade, vitaminas e minerais essenciais para manter
-          a saúde, energia e pelagem do seu cão. Embalagem de 15 kg.
+      <div class="row g-4 mb-5">
+
+        <!-- SERVIÇO: BANHO -->
+        <div class="col-md-6">
+          <div class="card-servico">
+            <span class="icone-servico" role="img" aria-label="Ícone de banheira representando o serviço de banho">🛁</span>
+            <h3 class="h4 fw-bold">Banho Completo</h3>
+            <p class="text-muted">
+              Banho com shampoo e condicionador adequados ao tipo de pelagem, secagem completa,
+              limpeza de ouvidos e corte de unhas.
+            </p>
+            <ul class="lista-servico-itens small">
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Shampoo e condicionador específicos</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Secagem e perfume pet</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Limpeza de ouvidos</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Corte de unhas incluso</li>
+            </ul>
+            <p class="preco-servico mb-2">A partir de R$ 60,00</p>
+            <span class="badge bg-success mb-3"><i class="bi bi-truck me-1" aria-hidden="true"></i>Disponível com tele-busca</span>
+            <div>
+              <a href="agendamento.html" class="btn btn-petfeliz">
+                <i class="bi bi-calendar-plus me-1" aria-hidden="true"></i>Agendar Banho
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SERVIÇO: TOSA -->
+        <div class="col-md-6">
+          <div class="card-servico">
+            <span class="icone-servico" role="img" aria-label="Ícone de tesoura representando o serviço de tosa">✂️</span>
+            <h3 class="h4 fw-bold">Tosa</h3>
+            <p class="text-muted">
+              Tosa higiênica ou completa, realizada por profissionais experientes, respeitando o
+              temperamento e a raça do seu pet.
+            </p>
+            <ul class="lista-servico-itens small">
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Tosa higiênica (patas, barriga e região íntima)</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Tosa completa (corpo todo)</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Acabamento e escovação</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Pode ser combinada com banho</li>
+            </ul>
+            <p class="preco-servico mb-2">A partir de R$ 45,00</p>
+            <span class="badge bg-success mb-3"><i class="bi bi-truck me-1" aria-hidden="true"></i>Disponível com tele-busca</span>
+            <div>
+              <a href="agendamento.html" class="btn btn-petfeliz">
+                <i class="bi bi-calendar-plus me-1" aria-hidden="true"></i>Agendar Tosa
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TABELA DE PREÇOS -->
+      <section aria-label="Tabela de preços dos serviços" class="mb-5">
+        <h2 class="titulo-secao mb-4">Tabela de Preços</h2>
+        <div class="table-responsive">
+          <table class="table table-striped align-middle bg-white rounded-4 overflow-hidden shadow-sm" style="border-radius:14px;">
+            <caption class="visualmente-oculto">Lista de serviços, descrição e respectivos valores em reais</caption>
+            <thead class="table-success">
+              <tr>
+                <th scope="col">Serviço</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>🛁 Banho Completo</td>
+                <td>Banho, secagem, limpeza de ouvidos e corte de unhas</td>
+                <td class="fw-bold">R$ 60,00</td>
+              </tr>
+              <tr>
+                <td>✂️ Tosa Higiênica</td>
+                <td>Tosa de patas, barriga e região íntima</td>
+                <td class="fw-bold">R$ 45,00</td>
+              </tr>
+              <tr>
+                <td>✂️ Tosa Completa</td>
+                <td>Tosa do corpo todo, com acabamento</td>
+                <td class="fw-bold">R$ 85,00</td>
+              </tr>
+              <tr>
+                <td>🛁✂️ Banho + Tosa</td>
+                <td>Combo completo de banho e tosa</td>
+                <td class="fw-bold">R$ 130,00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-muted small mt-2">
+          <i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i>
+          Valores de referência para pets de porte pequeno e médio. Pets de porte grande podem ter acréscimo de até 20%.
         </p>
-        <p><strong>Valor:</strong> R$ 89,90</p>
-      </article>
+      </section>
 
-      <hr>
+      <!-- MÉTODOS DE ATENDIMENTO -->
+      <section aria-label="Métodos de atendimento disponíveis" class="mb-4">
+        <h2 class="titulo-secao mb-4">Como você prefere ser atendido?</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="p-4 rounded-4 h-100 shadow-sm bg-white">
+              <span style="font-size:2.2rem;" role="img" aria-label="Ícone de pata de animal">🐾</span>
+              <h3 class="h5 fw-bold mt-2">Entrega no Local</h3>
+              <p class="text-muted small mb-0">
+                Traga seu pet até a nossa loja no horário agendado. Sem custo extra de transporte.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-4 rounded-4 h-100 shadow-sm bg-white">
+              <span style="font-size:2.2rem;" role="img" aria-label="Ícone de carro representando tele-busca">🚗</span>
+              <h3 class="h5 fw-bold mt-2">Tele-busca</h3>
+              <p class="text-muted small mb-0">
+                Buscamos e entregamos seu pet em casa com segurança, no horário marcado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <article>
-        <h4>Ração Filhotes Sabor Frango</h4>
-        <img
-          src="https://placehold.co/200x150?text=Racao+Filhotes"
-          alt="Foto da Ração para Filhotes Sabor Frango"
-          width="200"
-          height="150"
-        >
-        <p>
-          <strong>Descrição:</strong> Ração especialmente formulada para filhotes de cães de até 12 meses.
-          Rica em DHA para o desenvolvimento cerebral e cálcio para ossos fortes. Sabor frango que
-          os filhotes adoram. Embalagem de 3 kg.
-        </p>
-        <p><strong>Valor:</strong> R$ 64,90</p>
-      </article>
-    </section>
+      <!-- CTA -->
+      <section class="text-center">
+        <a href="agendamento.html" class="btn btn-destaque btn-lg">
+          <i class="bi bi-calendar-check-fill me-1" aria-hidden="true"></i>Agendar Banho ou Tosa
+        </a>
+      </section>
 
-    <hr>
-
-    <section>
-      <h3>Categoria 2: Acessórios</h3>
-      <p>Conforto, segurança e diversão para o seu animal de estimação.</p>
-
-      <article>
-        <h4>Coleira Ajustável de Nylon</h4>
-        <img
-          src="https://placehold.co/200x150?text=Coleira+Nylon"
-          alt="Foto da Coleira Ajustável de Nylon"
-          width="200"
-          height="150"
-        >
-        <p>
-          <strong>Descrição:</strong> Coleira resistente de nylon com fivela de segurança e regulagem de tamanho.
-          Disponível nos tamanhos P, M e G. Cores variadas. Ideal para passeios diários, com anel
-          metálico reforçado para guia.
-        </p>
-        <p><strong>Valor:</strong> R$ 29,90</p>
-      </article>
-
-      <hr>
-
-      <article>
-        <h4>Cama Pet Ortopédica</h4>
-        <img
-          src="https://placehold.co/200x150?text=Cama+Pet"
-          alt="Foto da Cama Pet Ortopédica"
-          width="200"
-          height="150"
-        >
-        <p>
-          <strong>Descrição:</strong> Cama com espuma ortopédica de alta densidade, ideal para pets com
-          problemas articulares ou de idade avançada. Capa removível e lavável. Tamanho 70x50 cm,
-          suporta até 20 kg.
-        </p>
-        <p><strong>Valor:</strong> R$ 119,90</p>
-      </article>
-    </section>
-
-    <hr>
-
-    <section>
-      <h3>Categoria 3: Higiene</h3>
-      <p>Mantenha seu pet sempre limpo, cheiroso e saudável.</p>
-
-      <article>
-        <h4>Shampoo Neutro para Cães</h4>
-        <img
-          src="https://placehold.co/200x150?text=Shampoo+Pet"
-          alt="Foto do Shampoo Neutro para Cães"
-          width="200"
-          height="150"
-        >
-        <p>
-          <strong>Descrição:</strong> Shampoo com pH neutro formulado especialmente para a pele e pelagem
-          dos cães. Hipoalergênico, livre de parabenos e corantes artificiais. Fragrância suave de
-          lavanda. Frasco de 500 ml.
-        </p>
-        <p><strong>Valor:</strong> R$ 24,90</p>
-      </article>
-
-      <hr>
-
-      <article>
-        <h4>Kit Escova Dental Pet</h4>
-        <img
-          src="https://placehold.co/200x150?text=Kit+Dental"
-          alt="Foto do Kit Escova Dental Pet"
-          width="200"
-          height="150"
-        >
-        <p>
-          <strong>Descrição:</strong> Kit completo para higiene bucal do seu pet, incluindo escova de dente
-          dupla (cabo longo e dedeira), pasta dental sabor carne e manual de instruções. Previne
-          tártaro e mantém o hálito fresco.
-        </p>
-        <p><strong>Valor:</strong> R$ 18,50</p>
-      </article>
-    </section>
-
+    </div>
   </main>
 
-  <hr>
-  <footer>
-    <p><strong>PetFeliz Petshop</strong> &copy; 2025 - Todos os direitos reservados.</p>
-    <p>Desenvolvido por: João da Silva | Disciplina: Fundamentos de Sistemas Web</p>
-    <p>Contato: contato@petfeliz.com.br | Telefone: (31) 3333-4444</p>
-    <nav>
-      <a href="index.html">Início</a> |
-      <a href="produtos.html">Produtos</a> |
-      <a href="servicos.html">Serviços</a>
-    </nav>
+  <!-- RODAPÉ -->
+  <footer class="rodape" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6><i class="bi bi-paw-fill me-1" aria-hidden="true"></i>PetFeliz Petshop</h6>
+          <p class="small opacity-75">Rua dos Animais, 123 – Centro</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Navegação</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="agendamento.html">Agendamento</a></li>
+            <li><a href="ajuda.html">Ajuda</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Contato</h6>
+          <ul class="list-unstyled small">
+            <li><a href="tel:+55313333444">(31) 3333-4444</a></li>
+            <li><a href="mailto:contato@petfeliz.com.br">contato@petfeliz.com.br</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="rodape-copy text-center">
+        <p class="mb-0">&copy; <span class="ano-atual">2026</span> PetFeliz Petshop. Desenvolvido por João da Silva – Fundamentos de Sistemas Web.</p>
+      </div>
+    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmYfn3Z2LcxYGPt6zo0xCqDQkHi" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
